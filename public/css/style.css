@@ -1,0 +1,13 @@
+/**Site structure **/
+body,
+html {
+    font-family:  Arial, sans-serif;
+    word-wrap: break-word!important;
+    font-size: 17px;
+    font-weight:400;
+}
+
+/**Nav bar**/
+.bg-navblue {
+    background-color: #0b3c52;
+}
