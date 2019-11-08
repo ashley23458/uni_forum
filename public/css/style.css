@@ -11,3 +11,48 @@ html {
 .bg-navblue {
     background-color: #0b3c52;
 }
+
+/**Forms**/
+#form1{
+    padding-top: 60px;
+    font-size: 1rem;
+}
+
+.alert-error {
+    color: #fff;
+    background-color: #DA291C;
+    border-color: #DA291C;
+}
+
+.required-fields {
+    font-style: italic;
+    color: #231f20;
+}
+.panelGrey {
+    background-color: #e6e6fa;
+    padding: 10px 10px 10px 10px;
+}
+
+/**Buttons**/
+.btn-secondary {
+    background-color: #235a73;
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active{
+    background-color: #41738a!important;
+    color:#fff!important;
+}
+
+/**Fonts**/
+.h1, h1{
+    font-size: 2.9rem;
+    font-weight: bold;
+}
+
+.h2, h2, .h3, h3{
+    font-size: 1.5rem;
+    color: #235a73;
+    font-weight: bold;
+}
+
