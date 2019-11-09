@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use http\Client\Response;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +37,28 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Check login for email or username
+     *
+     * @return Response
+     */
+    public function username()
+    {
+        $login = request()->input('username');
+        return filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+    }
+
+    /**
+     * Allow user to log out
+     *
+     * @return Response
+     */
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/')->with('info', 'You have been logged out');
     }
 }

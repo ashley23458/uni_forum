@@ -23,7 +23,27 @@
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            <a class="btn btn-outline-light my-2 my-sm-0" href="{{route('register')}}">Sign up</a>
         </form>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    @if(\Auth::user())
+                        {{Auth::user()->username}}
+                    @else
+                        Register / log in
+                    @endif
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @if(\Auth::user())
+                            <a class="dropdown-item" href="{{route('logout')}}">Log out</a>
+                        @else
+                            <a class="dropdown-item" href="{{route('register')}}">Register</a>
+                            <a class="dropdown-item" href="{{route('login')}}">Log in</a>
+                    @endif
+                </div>
+            </li>
+        </ul>
     </div>
 </nav>

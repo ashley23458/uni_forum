@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('index');
 });
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
