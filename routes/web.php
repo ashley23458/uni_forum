@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'ForumController@index')->name('home');
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
