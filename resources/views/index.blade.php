@@ -13,7 +13,7 @@
                 <tbody>
                 @foreach ($forums as $forum)
                     <tr>
-                        <th scope="row"><a href="#">{{$forum->name}}</a></th>
+                        <th scope="row"><a href="{{ route('forum_threads', ['id' => $forum->id]) }}">{{$forum->name}}</a></th>
                         <td>Threads<br></td>
                         <td></td>
                     </tr>

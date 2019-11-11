@@ -37,7 +37,7 @@ html {
     padding: 10px 10px 10px 10px;
 }
 
-/**Buttons**/
+/**Buttons and badges**/
 .btn-secondary {
     background-color: #235a73;
 }
@@ -48,6 +48,11 @@ html {
     color:#fff!important;
 }
 
+.badge-primary {
+    color: #fff;
+    background-color: #1b6486;
+}
+
 /**Fonts**/
 .h1, h1{
     font-size: 1.5rem;
@@ -55,7 +60,7 @@ html {
 }
 
 .h2, h2, .h3, h3{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #235a73;
     font-weight: bold;
 }
