@@ -16,7 +16,7 @@
                         <tbody>
                         @foreach ($threads as $thread)
                             <tr>
-                                <th scope="row"><a href="">{{$thread->title}}</a></th>
+                                <th scope="row"><a href="{{route('thread.show', $thread->id)}}">{{$thread->title}}</a></th>
                                 <td>
                                     <div class="text-right">Published by
                                         <span class="badge badge-primary">

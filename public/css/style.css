@@ -53,6 +53,10 @@ html {
     background-color: #1b6486;
 }
 
+.badge-success {
+    background-color: #165A26;
+}
+
 /**Fonts**/
 .h1, h1{
     font-size: 1.5rem;

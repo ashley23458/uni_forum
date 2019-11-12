@@ -47,12 +47,13 @@ class ThreadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Thread $thread
+     * @return void
      */
-    public function show($id)
+    public function show(Thread $thread)
     {
-        //
+        $statistics = Thread::where('user_id', $thread->user_id)->get();
+        return view('thread.show', ['thread' => $thread, 'statistics' => $statistics]);
     }
 
     /**
