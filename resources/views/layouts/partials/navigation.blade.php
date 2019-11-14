@@ -10,15 +10,12 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Forums
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                </div>
-            </li>
+            @if(\Auth::user())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('thread.create')}}">
+                        Create new thread <span class="sr-only">(Create new thread)</span></a>
+                </li>
+            @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

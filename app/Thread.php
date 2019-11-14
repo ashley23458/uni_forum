@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'body', 'user_id', 'forum_id'
+    ];
+
+    /**
      * The attributes that should be mutated to dates.
      *
      * @var array

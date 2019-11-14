@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreThreadPost;
 use App\Thread;
+use App\Forum;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 
 class ThreadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the threads for a specific forum.
      *
@@ -24,24 +31,29 @@ class ThreadController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Collect all current forums and pass to the form for creating a new thread.
      *
      * @return Response
      */
     public function create()
     {
-        //
+        $forums = Forum::get(['id', 'name']);
+        return view('thread.create', ['forums' => $forums]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(StoreThreadPost $request)
     {
-        //
+        Thread::create(['title' => $request->title,
+            'body' => $request->body,
+            'forum_id' => $request->forum_id,
+            'user_id' => Auth::user()->id]);
+        return redirect('/')->with('info', 'Thread created successfully.');
     }
 
     /**
@@ -70,7 +82,7 @@ class ThreadController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
      * @return Response
      */
