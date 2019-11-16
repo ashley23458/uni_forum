@@ -24,7 +24,7 @@ class StoreThreadPost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:threads|max:255',
+            'title' => 'required|max:255',
             'body' => 'required|string|min:10',
             'forum_id' => 'required|integer|exists:forums,id'
         ];

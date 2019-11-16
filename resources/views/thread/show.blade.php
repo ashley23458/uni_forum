@@ -38,7 +38,9 @@
                     <p class="font-italic text-muted">Last updated {{ $thread->updated_at->format('jS F Y h:i A') }}</p>
                 </div>
                 <div class="card-footer text-muted">
-
+                    <a href="{{route('thread.edit', $thread->id)}}" class="badge badge-info float-right">
+                        <ion-icon name="paper"></ion-icon> Edit
+                    </a>
                 </div>
             </div>
         </div>

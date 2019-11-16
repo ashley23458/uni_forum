@@ -15,6 +15,7 @@ class ThreadController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
+
     /**
      * Display a listing of the threads for a specific forum.
      *
@@ -69,26 +70,28 @@ class ThreadController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Collect all current forums and pass to form for editing the specified Thread.
      *
-     * @param int $id
+     * @param Thread $thread
      * @return void
      */
-    public function edit($id)
+    public function edit(Thread $thread)
     {
-        //
+        $forums = Forum::get(['id', 'name']);
+        return view('thread.edit', ['thread' => $thread, 'forums' => $forums]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Thread in storage.
      *
-     * @param Request $request
-     * @param  int  $id
-     * @return Response
+     * @param StoreThreadPost $request
+     * @param Thread $thread
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(StoreThreadPost $request, Thread $thread)
     {
-        //
+        $thread->update(['forum_id' => $request->forum_id, 'title' => $request->title, 'body' => $request->body]);
+        return redirect()->to('thread/'.$thread->id)->with('info', 'Thread updated successfully');
     }
 
     /**
