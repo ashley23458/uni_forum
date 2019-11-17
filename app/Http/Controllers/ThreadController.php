@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreThreadPost;
 use App\Thread;
@@ -97,11 +98,13 @@ class ThreadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Thread $thread
      * @return Response
+     * @throws Exception
      */
-    public function destroy($id)
+    public function destroy(Thread $thread)
     {
-        //
+        $thread->delete();
+        return redirect()->to('/')->with('info', 'Thread deleted successfully');
     }
 }

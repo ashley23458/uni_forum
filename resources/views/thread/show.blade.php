@@ -20,8 +20,16 @@
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <span class="badge badge-success">Likes <span class="badge badge-light">{{$statistics->sum('likes')}}</span></span>
-                            <span class="badge badge-danger">Threads <span class="badge badge-light">{{$statistics->count()}}</span></span>
+                            <span class="badge badge-success">Likes
+                                <span class="badge badge-light">
+                                    {{$statistics->sum('likes')}}
+                                </span>
+                            </span>
+                            <span class="badge badge-danger">Threads
+                                <span class="badge badge-light">
+                                    {{$statistics->count()}}
+                                </span>
+                            </span>
                         </li>
                     </ul>
 
@@ -38,7 +46,14 @@
                     <p class="font-italic text-muted">Last updated {{ $thread->updated_at->format('jS F Y h:i A') }}</p>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="{{route('thread.edit', $thread->id)}}" class="badge badge-info float-right">
+                    <form id="formDelete" method="post" class="float-right" action="{{ route('thread.destroy', $thread->id) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button class="btn btn-danger" type="submit">
+                            <ion-icon name="trash"></ion-icon> Delete
+                        </button>
+                    </form>
+                    <a href="{{route('thread.edit', $thread->id)}}" role="button" class="btn btn-secondary float-right">
                         <ion-icon name="paper"></ion-icon> Edit
                     </a>
                 </div>
