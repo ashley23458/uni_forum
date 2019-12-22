@@ -17,9 +17,18 @@
                 </li>
             @endif
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
+            {{ csrf_field() }}
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search threads" aria-label="Search">
+            <div class="input-group">
+                <select class="my-2 my-sm-0" id="filter" name="filter">
+                    <option selected>Apply filter... </option>
+                    <option value="Username">Username</option>
+                    <option value="Thread title">Thread title</option>
+                    <option value="Forum title">Forum title</option>
+                </select>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </div>
         </form>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">

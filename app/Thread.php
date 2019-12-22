@@ -32,4 +32,9 @@ class Thread extends Model
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
+
+    public function forum()
+    {
+        return $this->belongsTo('App\Forum', 'forum_id', 'id');
+    }
 }
