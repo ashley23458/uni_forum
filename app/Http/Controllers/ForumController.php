@@ -13,10 +13,6 @@ class ForumController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Fetch all the forums
-     * @return View
-     */
     public function index()
     {
         $forums = Forum::withCount(['threads'])->get();

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\SearchThreadPost;
 use App\Thread;
 
@@ -12,7 +11,7 @@ class SearchController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
 	public function searchThreads(SearchThreadPost $request)
     {
         $searchTerm = $request->search;
