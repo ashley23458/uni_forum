@@ -16,9 +16,12 @@
                     <tr>
                         <th scope="row"><a href="{{ route('forum_threads', ['id' => $forum->id]) }}">{{$forum->name}}</a></th>
                         <td>
-                            <span class="badge badge-info">Threads
+                            <span class="badge badge-info">Number of Threads
                                 <span class="badge badge-light">
                                     {{$forum->threads_count}}
+                                </span>
+                                <span class="sr-only">
+                                    are inside the {{$forum->name}} forum
                                 </span>
                             </span><br>
                         </td>
