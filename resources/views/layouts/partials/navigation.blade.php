@@ -41,7 +41,7 @@
                         Register / log in
                     @endif
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     @if(\Auth::user())
                             <a class="dropdown-item" href="{{route('logout')}}">Log out</a>
                         @else

@@ -14,7 +14,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forums = Forum::all();
+        $forums = Forum::withCount(['threads'])->get();
         return view('index', ['forums' => $forums]);
     }
 }
