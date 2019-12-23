@@ -3,7 +3,7 @@
 <head>
     @include('layouts.partials.head')
 </head>
-<body>
+<body class="d-flex flex-column">
 @include('layouts.partials.header')
 @include('layouts.partials.navigation')
 <div id="main">

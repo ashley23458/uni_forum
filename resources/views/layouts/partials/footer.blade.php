@@ -1,4 +1,8 @@
-
+<footer id="sticky-footer" class="py-4 bg-navblue">
+    <div class="container text-center">
+        <span>&copy; U1653907 Ashley Booth {{ now()->year }} University Forum</span>
+    </div>
+</footer>
 
 <!-- Scripts-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -7,12 +7,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             @if(\Auth::user())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('thread.create')}}">
+                    <a class="nav-link {{ Request::is('thread/create') ? 'active' : '' }}" href="{{route('thread.create')}}">
                         Create new thread <span class="sr-only">(Create new thread)</span></a>
                 </li>
             @endif

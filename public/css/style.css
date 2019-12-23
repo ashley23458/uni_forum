@@ -5,15 +5,34 @@ html {
     word-wrap: break-word!important;
     font-size: 17px;
     font-weight:400;
+    height: 100%;
 }
 
 #main{
     padding: 35px 0;
+    flex: 1 0 auto;
 }
 
-/**Nav bar**/
+/**Nav bar and Footer**/
 .bg-navblue {
     background-color: #0b3c52;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #c1c1c1;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+    color: #c1c1c1;
+}
+
+.footer {
+    position: absolute;
 }
 
 /**Forms**/
