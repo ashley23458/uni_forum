@@ -8,6 +8,11 @@ use App\Forum;
 
 class ForumController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Fetch all the forums
      * @return View

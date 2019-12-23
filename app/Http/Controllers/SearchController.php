@@ -8,6 +8,11 @@ use App\Thread;
 
 class SearchController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
 	public function searchThreads(SearchThreadPost $request)
     {
         $searchTerm = $request->search;

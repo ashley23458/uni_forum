@@ -6,30 +6,30 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            @if(\Auth::user())
+        @if(\Auth::user())
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('thread/create') ? 'active' : '' }}" href="{{route('thread.create')}}">
                         Create new thread <span class="sr-only">(Create new thread)</span></a>
                 </li>
-            @endif
-        </ul>
-        <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
-            {{ csrf_field() }}
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search threads" aria-label="Search">
-            <div class="input-group">
-                <select class="my-2 my-sm-0" id="filter" name="filter">
-                    <option selected>Apply filter... </option>
-                    <option value="Username">Username</option>
-                    <option value="Thread title">Thread title</option>
-                    <option value="Forum title">Forum title</option>
-                </select>
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </div>
-        </form>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
+                {{ csrf_field() }}
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search threads" aria-label="Search">
+                <div class="input-group">
+                    <select class="my-2 my-sm-0" id="filter" name="filter">
+                        <option selected>Apply filter... </option>
+                        <option value="Username">Username</option>
+                        <option value="Thread title">Thread title</option>
+                        <option value="Forum title">Forum title</option>
+                    </select>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </form>
+        @endif
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
