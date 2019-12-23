@@ -4,23 +4,17 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Laravel. (2019). Form Request Validation [Request class for validation]. (6.x).
+ * Retrieved from https://laravel.com/docs/6.x/validation#form-request-validation
+ */
 class StoreThreadPost extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
@@ -31,9 +25,8 @@ class StoreThreadPost extends FormRequest
     }
 
     /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
+     * Laravel. (2019). Customizing The Error Messages [Method for creating custom error messages]. (6.x).
+     * Retrieved from https://laravel.com/docs/6.x/validation#form-request-validation
      */
     public function messages()
     {
