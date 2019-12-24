@@ -6,27 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'title', 'body', 'user_id', 'forum_id'
     ];
 
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
     protected $dates = [
         'created_at',
         'updated_at'
     ];
 
     /**
-     * Get the user that published the thread.
+     * Laravel. (2019). Eloquent: Relationships [A belongsTo method for linking another table]. (6.x).
+     * Retrieved from https://laravel.com/docs/6.x/eloquent-relationships#one-to-one
      */
     public function user()
     {
