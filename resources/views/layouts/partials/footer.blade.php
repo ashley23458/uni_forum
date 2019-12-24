@@ -1,3 +1,5 @@
+<!--Bootstrap. (2019). Sticky footer [Contains an example for setting up a footer.]. (4.3.1).
+Retrieved from https://getbootstrap.com/docs/4.3/examples/sticky-footer/-->
 <footer id="sticky-footer" class="py-4 bg-navblue">
     <div class="container text-center">
         <span>&copy; U1653907 Ashley Booth {{ now()->year }} University Forum</span>

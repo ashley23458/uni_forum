@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title', $thread->title)
 @section('content')
+    <!--Bootstrap. (2019). Cards [Contains examples for cards.]. (4.3.1).
+        Retrieved from https://getbootstrap.com/docs/4.3/components/card/-->
     <div class="row">
         <div class="col-md-3">
             <div class="card bg-light">

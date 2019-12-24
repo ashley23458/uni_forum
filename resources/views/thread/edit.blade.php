@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Edit thread')
 @section('content')
+    <!--Bootstrap. (2019). Forms [Contains a example for a form.]. (4.3.1).
+    Retrieved from https://getbootstrap.com/docs/4.3/components/forms/-->
     <div class="row">
         <div class="col-md-6">
             <h2>Edit thread</h2>

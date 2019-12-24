@@ -1,3 +1,5 @@
+<!-- Bootstrap. (2019). Navbar [Contains a example for a navigation bar.]. (4.3.1).
+Retrieved from https://getbootstrap.com/docs/4.3/components/navbar/-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-navblue">
     <a class="navbar-brand" href="{{route('home')}}"><h1>University Forum</h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

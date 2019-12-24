@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Threads')
 @section('content')
+    <!--Bootstrap. (2019). Cards [Contains examples for cards.]. (4.3.1).
+    Retrieved from https://getbootstrap.com/docs/4.3/components/card/-->
     <div class="card">
         <div class="card-header">
             <h2>Threads</h2>
