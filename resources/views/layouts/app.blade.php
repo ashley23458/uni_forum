@@ -8,7 +8,6 @@ Retrieved from https://jigsaw.tighten.co/docs/content-blade/ -->
     @include('layouts.partials.head')
 </head>
 <body class="d-flex flex-column">
-@include('layouts.partials.header')
 @include('layouts.partials.navigation')
 <div id="main">
     <div class="container">
