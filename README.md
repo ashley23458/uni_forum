@@ -10,3 +10,5 @@ University Forum Application
 8. php artisan db:seed to populate database tables.
 9. Ready to go! Visit your set domain "{domain}/".
 10. You can login with any username in the users table the password will be "password".
+
+© U1653907 Ashley Booth 2020
