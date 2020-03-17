@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ThreadController extends Controller
 {
-    /**
-     * Laravel. (2019). Authentication [Class constructor method containing middleware method ]. (6.x).
-     * Retrieved from https://laravel.com/docs/master/authentication
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,10 +26,6 @@ class ThreadController extends Controller
         return view('thread.create', ['forums' => $forums]);
     }
 
-    /**
-     * Laravel. (2019). The create method [Method for creating new item in database]. (6.x).
-     * Retrieved from https://laravel.com/docs/6.x/eloquent-relationships#the-create-method
-     */
     public function store(StoreThreadPost $request)
     {
         Thread::create(['title' => $request->title,
@@ -55,19 +47,12 @@ class ThreadController extends Controller
         return view('thread.edit', ['thread' => $thread, 'forums' => $forums]);
     }
 
-    /**
-     * Laravel. (2019). Updates [Method for updating item in database]. (6.x).
-     * Retrieved from https://laravel.com/docs/6.x/eloquent#updates
-     */
     public function update(StoreThreadPost $request, Thread $thread)
     {
         $thread->update(['forum_id' => $request->forum_id, 'title' => $request->title, 'body' => $request->body]);
         return redirect()->to('thread/'.$thread->id)->with('info', 'Thread updated successfully');
     }
 
-    /**
-
-     */
     public function destroy(Thread $thread)
     {
         $thread->delete();

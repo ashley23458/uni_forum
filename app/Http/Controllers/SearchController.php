@@ -7,10 +7,6 @@ use App\Thread;
 
 class SearchController extends Controller
 {
-    /**
-     * Laravel. (2019). Authentication [Class constructor containing middleware method ]. (6.x).
-     * Retrieved from https://laravel.com/docs/master/authentication
-     */
     public function __construct()
     {
         $this->middleware('auth');
