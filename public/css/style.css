@@ -101,3 +101,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/** Graph **/
+#chart-div {
+    height: 375px;
+}
