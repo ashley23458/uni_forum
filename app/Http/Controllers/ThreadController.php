@@ -28,10 +28,7 @@ class ThreadController extends Controller
 
     public function store(StoreThreadPost $request)
     {
-        Thread::create(['title' => $request->title,
-            'body' => $request->body,
-            'forum_id' => $request->forum_id,
-            'user_id' => Auth::user()->id]);
+        $request->user()->threads()->create($request->validated());
         return redirect('/')->with('info', 'Thread created successfully.');
     }
 
