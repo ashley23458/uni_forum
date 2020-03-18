@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Socialite;
+use Laravel\Socialite\Contracts\User as SocialiteUser;
 use App\User;
 
 class GoogleAuthController extends Controller
@@ -25,13 +26,14 @@ class GoogleAuthController extends Controller
 
         Auth::login($user, self::REMEMBER_ME);
 
-        return redirect(route('comments.index'));
+        return redirect(route('home'));
     }
 
     private function findOrCreateUser(SocialiteUser $googleUser)
     {
-        return User::firstOrCreate(['google_id' => $googleUser->getId()], [
+        return User::firstOrCreate(['email' => $googleUser->getEmail()], [
             'name' => $googleUser->getName(),
+            'google_id' => $googleUser->getId(),
             'email' => $googleUser->getEmail(),
             'password' => bcrypt(Str::random(32)),
         ]);
