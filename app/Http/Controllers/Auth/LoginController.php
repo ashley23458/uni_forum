@@ -39,16 +39,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * Check login for email or username
-     *
-     * @return Response
-     */
-    public function username()
-    {
-        $login = request()->input('username');
-        return filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-    }
 
     /**
      * Allow user to log out

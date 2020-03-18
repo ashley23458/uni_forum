@@ -6,7 +6,7 @@
             <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-5 panelGrey">
                 <h2>Login</h2>
                 <div class="required-fields">
-                    <p>Log in with Username/Email address and Password.</p>
+                    <p>Log in with Email address and Password.</p>
                     <p>Fields marked with (<span class="text-danger">*</span>) are mandatory.</p>
                 </div>
             </div>
@@ -16,15 +16,15 @@
                 <form method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="username">Username <span class="text-danger">*</span></label>
-                        <input type="text" name="username" id="username" class="form-control form-control"
-                               placeholder="Username/ email" value="{{ old('username') }}" />
-                        @if ($errors->has('username'))
+                        <label for="email">Email <span class="text-danger">*</span></label>
+                        <input type="text" name="email" id="email" class="form-control form-control"
+                               placeholder="Email" value="{{ old('email') }}" />
+                        @if ($errors->has('email'))
                             <div class="alert alert-error alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong>{{ $errors->first('username') }}</strong>
+                                <strong>{{ $errors->first('email') }}</strong>
                             </div>
                         @endif
                     </div>
