@@ -13,7 +13,7 @@
                         </li>
                         <li class="list-group-item">
                             <div class="font-weight-bold text-center">
-                                {{$thread->user->username}}
+                                {{$thread->user->name}}
                             </div>
                         </li>
                         <li class="list-group-item">
