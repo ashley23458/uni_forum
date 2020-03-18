@@ -43,6 +43,7 @@ class ThreadController extends Controller
 
     public function edit(Thread $thread)
     {
+        $this->authorize('access', $thread);
         $forums = Forum::get(['id', 'name']);
         return view('thread.edit', ['thread' => $thread, 'forums' => $forums]);
     }
@@ -55,6 +56,7 @@ class ThreadController extends Controller
 
     public function destroy(Thread $thread)
     {
+        $this->authorize('access', $thread);
         $thread->delete();
         return redirect()->to('/')->with('info', 'Thread deleted successfully');
     }
