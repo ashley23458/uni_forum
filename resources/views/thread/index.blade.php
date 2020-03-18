@@ -22,7 +22,7 @@
                                 <td>
                                     <div class="text-right">Published by
                                         <span class="badge badge-primary">
-                                            {{$thread->user->username}}
+                                            {{$thread->user->name}}
                                         </span>
                                         <br>{{ $thread->created_at->format('jS F Y h:i A') }}
                                     </div>
