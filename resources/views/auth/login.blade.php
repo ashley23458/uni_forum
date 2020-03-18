@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Log in')
 @section('content')
-    <div id="form1">
         <div class="row justify-content-center  text-center h-100">
             <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-5 panelGrey">
                 <h2>Login</h2>
@@ -41,9 +40,18 @@
                             </div>
                         @endif
                     </div>
-                    <input type="submit" value="Log in" class="btn btn-secondary" />
+                    <div class="row">
+                        <input type="submit" value="Log in" class="col-md-12 btn btn-secondary" />
+                    </div>
                 </form>
+                <div class="row">
+                    <strong class="mx-auto">OR</strong>
+                </div>
+                <div class="row">
+                    <a href="{{ route('google_login') }}" class="col-md-12 btn btn-social btn-dark">
+                        <span class="fab fa-google mr-2 pr-2 border-right"></span>Sign in with Google
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 @endsection

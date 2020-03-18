@@ -32,11 +32,6 @@ html {
 }
 
 /**Forms**/
-#form1{
-    padding-top: 60px;
-    font-size: 1rem;
-}
-
 #formDelete{
     display: inline;
 }
@@ -52,8 +47,10 @@ html {
     color: #231f20;
 }
 .panelGrey {
-    background-color: #e6e6fa;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 30px 10px 30px;
+    -moz-box-shadow: 0 0 4px #ccc;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
 }
 
 /**Buttons and badges**/
@@ -103,3 +100,4 @@ a:hover {
     color: #5a8396;
     text-decoration: underline;
 }
+

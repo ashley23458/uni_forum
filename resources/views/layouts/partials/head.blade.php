@@ -5,6 +5,7 @@
 <meta name="author" content="Ashley Booth">
 
 <link rel="icon" type="image/png" href="{{ asset ('images/favicon.png') }}" />
+<script src="https://kit.fontawesome.com/9923576412.js" crossorigin="anonymous"></script>
 
 <!-- CSS files-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
