@@ -1,5 +1,3 @@
-<!-- Bootstrap. (2019). Navbar [Contains a example for a navigation bar.]. (4.3.1).
-Retrieved from https://getbootstrap.com/docs/4.3/components/navbar/-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-navblue">
     <a class="navbar-brand" href="{{route('home')}}"><h1>University Forum</h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -24,7 +22,7 @@ Retrieved from https://getbootstrap.com/docs/4.3/components/navbar/-->
                 <div class="input-group">
                     <select class="my-2 my-sm-0" id="filter" name="filter">
                         <option selected>Apply filter... </option>
-                        <option value="Username">Username</option>
+                        <option value="name">Name</option>
                         <option value="Thread title">Thread title</option>
                         <option value="Forum title">Forum title</option>
                     </select>
@@ -38,7 +36,7 @@ Retrieved from https://getbootstrap.com/docs/4.3/components/navbar/-->
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     @if(\Auth::user())
-                        {{Auth::user()->username}}
+                        {{Auth::user()->name}}
                     @else
                         Register / log in
                     @endif
