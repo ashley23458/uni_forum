@@ -15,15 +15,15 @@
                 <form method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="username">Username <span class="text-danger">*</span></label>
-                        <input type="text" name="username" id="username" class="form-control form-control"
-                               placeholder="Username" value="{{ old('username') }}" />
-                        @if ($errors->has('username'))
+                        <label for="name">Name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" class="form-control form-control"
+                               placeholder="name" value="{{ old('name') }}" />
+                        @if ($errors->has('name'))
                             <div class="alert alert-error alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong>{{ $errors->first('username') }}</strong>
+                                <strong>{{ $errors->first('name') }}</strong>
                             </div>
                         @endif
                     </div>
