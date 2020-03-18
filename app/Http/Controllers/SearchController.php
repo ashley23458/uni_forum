@@ -15,9 +15,9 @@ class SearchController extends Controller
 	public function searchThreads(SearchThreadPost $request)
     {
         $searchTerm = $request->search;
-        if ($request->filter == "Username") {
+        if ($request->filter == "name") {
             $threads = Thread::whereHas('user', function($query) {
-                $query->where('username', 'like', '%' . \Request::input('search') . '%');
+                $query->where('name', 'like', '%' . \Request::input('search') . '%');
             })->limit(60)->get();
 
         }
@@ -38,7 +38,7 @@ class SearchController extends Controller
                 $query->where('name', 'like', '%' . \Request::input('search') . '%');
             })
             ->orWhereHas('user', function($query) {
-                $query->where('username', 'like', '%' . \Request::input('search') . '%');
+                $query->where('name', 'like', '%' . \Request::input('search') . '%');
             })
             ->limit(60)
             ->get();
