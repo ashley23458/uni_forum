@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ThreadController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index($forum)
     {
         $threads = Thread::where('forum_id', $forum)->orderBy('created_at', 'desc')->paginate(5);
