@@ -1,11 +1,19 @@
 <?php
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/', 'ForumController@index')->name('home');
+    Route::get('/forum/{id}', 'ThreadController@index')->name('forum_threads');
+    Route::post('thread/search', 'SearchController@searchThreads')->name('search');
+    Route::resource('thread', 'ThreadController')->except(['index']);
+});
 
-Route::get('/', 'ForumController@index')->name('home');
-Route::get('/forum/{id}', 'ThreadController@index')->name('forum_threads');
 Route::get('login/google', 'GoogleAuthController@findOrCreateUser');
 Route::get('login/google/callback', 'GoogleAuthController@callback');
 Route::get('login/google/auth', 'GoogleAuthController@auth')->name('google_login');
-Route::resource('thread', 'ThreadController')->except(['index']);
-Auth::routes();
+
+Auth::routes(['verify' => true]);
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::post('thread/search', 'SearchController@searchThreads')->name('search');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
