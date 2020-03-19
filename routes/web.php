@@ -9,11 +9,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 Route::get('login/google', 'GoogleAuthController@findOrCreateUser');
 Route::get('login/google/callback', 'GoogleAuthController@callback');
 Route::get('login/google/auth', 'GoogleAuthController@auth')->name('google_login');
-
 Auth::routes(['verify' => true]);
 Route::get('/logout', 'Auth\LoginController@logout');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
