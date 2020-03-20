@@ -7,7 +7,7 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('thread', 'ThreadController')->except(['index']);
     });
 
-    Route::get('/local/{lang}', 'ForumController@setLanguage')->name('language');
+    Route::get('/local/{lang}', 'LocalisationController@setLanguage')->name('language');
     Route::get('login/google', 'GoogleAuthController@findOrCreateUser');
     Route::get('login/google/callback', 'GoogleAuthController@callback');
     Route::get('login/google/auth', 'GoogleAuthController@auth')->name('google_login');
