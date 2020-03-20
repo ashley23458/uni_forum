@@ -9,24 +9,25 @@
         @if(\Auth::user())
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('home')}}">{{ __('messages.home') }} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('thread/create') ? 'active' : '' }}" href="{{route('thread.create')}}">
-                        Create new thread <span class="sr-only">(Create new thread)</span></a>
+                        {{ __('messages.create_thread') }}
+                        <span class="sr-only">{{ __('messages.create_thread') }}</span></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
                 {{ csrf_field() }}
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search threads" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="{{ __('messages.search_threads') }}" aria-label="{{ __('messages.search_threads') }}">
                 <div class="input-group">
                     <select class="my-2 my-sm-0" id="filter" name="filter">
-                        <option selected>Apply filter... </option>
-                        <option value="name">Name</option>
-                        <option value="Thread title">Thread title</option>
-                        <option value="Forum title">Forum title</option>
+                        <option selected>{{ __('messages.apply_filter') }} </option>
+                        <option value="name">{{ __('messages.name') }}</option>
+                        <option value="Thread title">{{ __('messages.thread_title') }}</option>
+                        <option value="Forum title">{{ __('messages.forum_title') }}</option>
                     </select>
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">{{ __('messages.search') }}</button>
                 </div>
             </form>
         @endif
@@ -38,26 +39,26 @@
                     @if(\Auth::user())
                         {{Auth::user()->name}}
                     @else
-                        Register / log in
+                        {{ __('messages.register_login') }}
                     @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     @if(\Auth::user())
-                            <a class="dropdown-item" href="{{route('logout')}}">Log out</a>
+                            <a class="dropdown-item" href="{{route('logout')}}">{{ __('messages.logout') }}</a>
                         @else
-                            <a class="dropdown-item" href="{{route('register')}}">Register</a>
-                            <a class="dropdown-item" href="{{route('login')}}">Log in</a>
+                            <a class="dropdown-item" href="{{route('register')}}">{{ __('messages.register') }}</a>
+                            <a class="dropdown-item" href="{{route('login')}}">{{ __('messages.login') }}</a>
                     @endif
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false"> Language
+                   aria-haspopup="true" aria-expanded="false"> {{ __('messages.language') }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('language', 'en')}}">English</a>
-                    <a class="dropdown-item" href="{{route('language', 'de')}}">Germany</a>
+                    <a class="dropdown-item" href="{{route('language', 'en')}}">{{ __('messages.english') }}</a>
+                    <a class="dropdown-item" href="{{route('language', 'de')}}">{{ __('messages.germany') }}</a>
                 </div>
             </li>
         </ul>
