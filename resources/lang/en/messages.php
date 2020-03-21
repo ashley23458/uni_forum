@@ -41,4 +41,7 @@ return [
     'delete' => 'Delete',
     'edit' => 'Edit',
     'thread_delete_success' => 'Thread deleted successfully.',
+    'published_by' => 'Published by',
+    'found' => 'Found',
+    'results_for' => 'search result(s) for',
 ];

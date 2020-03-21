@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', 'Threads')
+@section('title', __('messages.threads'))
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h2>Threads</h2>
+            <h2>{{__('messages.threads')}}</h2>
         </div>
         <div class="card-body">
             @if (count($threads) > 0)
-            <p>Found {{count($threads)}} search result(s) for "{{ $searchTerm }}". </p>
+            <p>{{ __('messages.found') }} {{count($threads)}} {{ __('messages.results_for') }} "{{ $searchTerm }}". </p>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -19,7 +19,7 @@
                             <tr>
                                 <th scope="row"><a href="{{route('thread.show', $thread->id)}}">{{$thread->title}}</a></th>
                                 <td>
-                                    <div class="text-right">Published by
+                                    <div class="text-right">{{ __('messages.published_by') }}
                                         <span class="badge badge-primary">
                                             {{$thread->user->name}}
                                         </span>
@@ -32,7 +32,7 @@
                     </table>
                 </div>
                 @else
-                <p>Found 0 results for "{{$searchTerm}}"</p>
+                <p>{{ __('messages.found') }} 0 {{ __('messages.results_for') }} "{{$searchTerm}}"</p>
             @endif
         </div>
     </div>
