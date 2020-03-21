@@ -15,4 +15,11 @@ return [
     'language' => 'Wähle eine Sprache',
     'english' => 'English',
     'germany' => 'Deutschland',
+    'forum' => 'Forum',
+    'General Discussions' => 'Allgemeine Diskussionen',
+    'Learning Discussions' => 'Lerndiskussionen',
+    'Reading Discussions' => 'Diskussionen lesen',
+    'Events Discussions' => 'Veranstaltungsdiskussionen',
+    'Tech Discussions' => 'Technische Diskussionen',
+    'Entertainment Discussions' => 'Unterhaltungsgespräche',
 ];

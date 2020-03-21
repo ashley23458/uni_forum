@@ -5,7 +5,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>Forums</h2>
+                    <h2>{{ __('messages.forum') }}</h2>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -16,7 +16,7 @@
                         <tbody>
                         @foreach ($forums as $forum)
                             <tr>
-                                <th scope="row"><a href="{{ route('forum_threads', ['id' => $forum->id]) }}">{{$forum->name}}</a></th>
+                                <th scope="row"><a href="{{ route('forum_threads', ['id' => $forum->id]) }}">{{ __('messages.'.$forum->name) }}</a></th>
                             </tr>
                         @endforeach
                         </tbody>

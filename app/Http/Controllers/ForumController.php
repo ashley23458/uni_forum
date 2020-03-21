@@ -15,9 +15,9 @@ class ForumController extends Controller
     	$reasons = $lava->DataTable();
     	$reasons->addStringColumn('Reasons')->addNumberColumn('Percent');
     	foreach ($forums as $forum) {
-    		$reasons->addRow([$forum->name, $forum->threads_count]);
+    		$reasons->addRow([__('messages.'.$forum->name), $forum->threads_count]);
     	}
-    	$lava->PieChart('Forum', $reasons, ['title' => "Forums"]);
+    	$lava->PieChart('Forum', $reasons, ['title' => __('messages.forum')]);
 
         return view('index', ['forums' => $forums, 'lava' => $lava]);
     }

@@ -15,4 +15,11 @@ return [
     'language' => 'Language',
     'english' => 'English',
     'germany' => 'Germany',
+    'forum' => 'Forum',
+    'General Discussions' => 'General Discussions',
+    'Learning Discussions' => 'Learning Discussions',
+    'Reading Discussions' => 'Reading Discussions',
+    'Events Discussions' => 'Events Discussions',
+    'Tech Discussions' => 'Tech Discussions',
+    'Entertainment Discussions' => 'Entertainment Discussions',
 ];
