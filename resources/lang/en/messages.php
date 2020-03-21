@@ -34,4 +34,11 @@ return [
     'edit_thread_title' => 'Edit thread',
     'thread_create_success' => 'Thread created successfully.',
     'thread_update_success' => 'Thread updated successfully.',
+    'joined' => 'Joined',
+    'last_updated' => 'Last updated',
+    'likes' => 'Likes',
+    'threads' => 'Threads',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'thread_delete_success' => 'Thread deleted successfully.',
 ];

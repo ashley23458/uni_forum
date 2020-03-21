@@ -49,6 +49,6 @@ class ThreadController extends Controller
     {
         $this->authorize('access', $thread);
         $thread->delete();
-        return redirect()->to('/')->with('info', 'Thread deleted successfully');
+        return redirect()->to('/')->with('info',  __('messages.thread_delete_success'));
     }
 }

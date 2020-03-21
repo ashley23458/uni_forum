@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('title', $thread->title)
 @section('content')
-    <!--Bootstrap. (2019). Cards [Contains examples for cards.]. (4.3.1).
-        Retrieved from https://getbootstrap.com/docs/4.3/components/card/-->
     <div class="row">
         <div class="col-md-3">
             <div class="card bg-light">
@@ -18,16 +16,16 @@
                         </li>
                         <li class="list-group-item">
                             <div class="font-weight-bold text-center font-italic text-muted">
-                                Joined: <br>{{$thread->user->created_at->format('jS F Y')}}
+                                {{ __('messages.joined') }}: <br>{{$thread->user->created_at->format('jS F Y')}}
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <span class="badge badge-success">Likes
+                            <span class="badge badge-success">{{ __('messages.likes') }}
                                 <span class="badge badge-light">
                                     {{$statistics->sum('likes')}}
                                 </span>
                             </span>
-                            <span class="badge badge-danger">Threads
+                            <span class="badge badge-danger">{{ __('messages.threads') }}
                                 <span class="badge badge-light">
                                     {{$statistics->count()}}
                                 </span>
@@ -45,7 +43,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">{{$thread->body}}</p>
-                    <p class="font-italic text-muted">Last updated {{ $thread->updated_at->format('jS F Y h:i A') }}</p>
+                    <p class="font-italic text-muted">{{ __('messages.last_updated') }} {{ $thread->updated_at->format('jS F Y h:i A') }}</p>
                 </div>
                 <div class="card-footer text-muted">
                     @can('access', $thread)
@@ -53,11 +51,11 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button class="btn btn-danger" type="submit">
-                                <ion-icon name="trash"></ion-icon> Delete
+                                <ion-icon name="trash"></ion-icon> {{ __('messages.delete') }}
                             </button>
                         </form>
                         <a href="{{route('thread.edit', $thread->id)}}" role="button" class="btn btn-secondary float-right">
-                            <ion-icon name="paper"></ion-icon> Edit
+                            <ion-icon name="paper"></ion-icon> {{ __('messages.edit') }}
                         </a>
                     @endcan
                 </div>

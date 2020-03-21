@@ -34,4 +34,11 @@ return [
     'edit_thread_title' => 'Thread bearbeiten',
     'thread_create_success' => 'Thread erfolgreich erstellt.',
     'thread_update_success' => 'Thread erfolgreich aktualisiert.',
+    'joined' => 'Beigetreten',
+    'last_updated' => 'Zuletzt aktualisiert',
+    'likes' => 'Likes',
+    'threads' => 'Themen',
+    'delete' => 'Löschen',
+    'edit' => 'Bearbeiten',
+    'thread_delete_success' => 'Thread erfolgreich gelöscht.',
 ];
