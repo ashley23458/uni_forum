@@ -1,25 +1,23 @@
 @extends('layouts.app')
-@section('title', 'Edit thread')
+@section('title', __('messages.edit_thread_title'))
 @section('content')
-    <!--Bootstrap. (2019). Forms [Contains a example for a form.]. (4.3.1).
-    Retrieved from https://getbootstrap.com/docs/4.3/components/forms/-->
     <div class="row">
         <div class="col-md-6">
-            <h2>Edit thread</h2>
+            <h2>{{ __('messages.edit_thread_title') }}</h2>
             <div class="required-fields">
-                <p>Fields marked with (<span class="text-danger">*</span>) are mandatory.</p>
+                <p>{{ __('messages.mandatory_fields') }} (<span class="text-danger">*</span>).</p>
             </div>
             <form method="POST" action="{{ route('thread.update', $thread->id) }}">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
-                    <label for="forum">Please select a forum <span class="text-danger">*</span></label>
+                    <label for="forum">{{ __('messages.please_forum') }} <span class="text-danger">*</span></label>
                     <select name="forum_id" class="form-control" id="forum">
-                        <option>Please select...</option>
+                        <option>{{ __('messages.please_select') }}</option>
                         @foreach ($forums as $forum)
                             <option value="{{$forum->id}}"
                                 {{ (old('forum_id', $thread->forum_id) == $forum->id ? "selected":"") }}>
-                                {{$forum->name}}
+                                {{ __('messages.'.$forum->name) }}
                             </option>
                         @endforeach
                     </select>
@@ -30,9 +28,9 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="title">Thread Title <span class="text-danger">*</span></label>
+                    <label for="title">{{ __('messages.thread_title') }} <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="title" name="title"
-                           value="{{old('title', $thread->title)}}"  placeholder="Enter thread title">
+                           value="{{old('title', $thread->title)}}"  placeholder="{{ __('messages.enter_thread_title') }}">
                     @if ($errors->has('title'))
                         <div class="alert alert-error alert-dismissable">
                             {{ $errors->first('title') }}
@@ -40,8 +38,8 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="body">Message <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="body" name="body" rows="6">{{old('body', $thread->body)}}
+                    <label for="body">{{ __('messages.message') }} <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="body" name="body" rows="6" placeholder="{{ __('messages.enter_message') }}">{{old('body', $thread->body)}}
                     </textarea>
                     @if ($errors->has('body'))
                         <div class="alert alert-error alert-dismissable">
@@ -49,7 +47,7 @@
                         </div>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="submit" class="btn btn-secondary">{{ __('messages.submit') }}</button>
             </form>
         </div>
     </div>

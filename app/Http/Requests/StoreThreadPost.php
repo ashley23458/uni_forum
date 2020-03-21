@@ -23,9 +23,9 @@ class StoreThreadPost extends FormRequest
     public function messages()
     {
         return [
-            'forum_id.integer' => 'The forum field is required.',
-            'forum_id.required'  => 'The forum field is required.',
-            'forum_id.exists'  => 'The selected forum does not exist.',
+            'forum_id.integer' => __('messages.forum_required'),
+            'forum_id.required'  => __('messages.forum_required'),
+            'forum_id.exists'  =>  __('messages.forum_exists'),
         ];
     }
 }

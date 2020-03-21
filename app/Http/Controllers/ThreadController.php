@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreThreadPost;
 use App\Thread;
 use App\Forum;
-use Illuminate\Support\Facades\Auth;
 
 class ThreadController extends Controller
 {
@@ -24,7 +23,7 @@ class ThreadController extends Controller
     public function store(StoreThreadPost $request)
     {
         $request->user()->threads()->create($request->validated());
-        return redirect('/')->with('info', 'Thread created successfully.');
+        return redirect('/')->with('info', __('messages.thread_create_success'));
     }
 
     public function show(Thread $thread)
@@ -43,7 +42,7 @@ class ThreadController extends Controller
     public function update(StoreThreadPost $request, Thread $thread)
     {
         $thread->update(['forum_id' => $request->forum_id, 'title' => $request->title, 'body' => $request->body]);
-        return redirect()->to('thread/'.$thread->id)->with('info', 'Thread updated successfully');
+        return redirect()->to('thread/'.$thread->id)->with('info', __('messages.thread_update_success'));
     }
 
     public function destroy(Thread $thread)
