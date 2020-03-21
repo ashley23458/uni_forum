@@ -39,14 +39,14 @@
                     @if(\Auth::user())
                         {{Auth::user()->name}}
                     @else
-                        {{ __('messages.register_login') }}
+                        {{ __('messages.login_register') }}
                     @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     @if(\Auth::user())
                             <a class="dropdown-item" href="{{route('logout')}}">{{ __('messages.logout') }}</a>
                         @else
-                            <a class="dropdown-item" href="{{route('register')}}">{{ __('messages.register') }}</a>
+                            <a class="dropdown-item" href="{{route('register')}}">{{ __('messages.registration') }}</a>
                             <a class="dropdown-item" href="{{route('login')}}">{{ __('messages.login') }}</a>
                     @endif
                 </div>

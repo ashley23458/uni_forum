@@ -44,4 +44,13 @@ return [
     'published_by' => 'Veröffentlicht von',
     'found' => 'Gefunden',
     'results_for' => 'Suchergebnis für',
+    'name' => 'Name',
+    'email' => 'E-Mail-Addresse',
+    'password' => 'Passwort',
+    'confirm_password' => 'Kennwort bestätigen',
+    'registration' => 'Anmeldung',
+    'login_message' => 'Melden Sie sich mit E-Mail-Adresse und Passwort an.',
+    'login' => 'Login',
+    'login_google' => 'Anmeldung mit Google',
+    'or' => 'ODER',
 ];
