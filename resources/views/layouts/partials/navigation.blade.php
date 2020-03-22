@@ -6,8 +6,9 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        @if(\Auth::user())
-            <ul class="navbar-nav mr-auto">
+
+        <ul class="navbar-nav mr-auto">
+            @if(\Auth::user())
                 <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('home')}}">{{ __('messages.home') }} <span class="sr-only">(current)</span></a>
                 </li>
@@ -16,7 +17,19 @@
                         {{ __('messages.create_thread') }}
                         <span class="sr-only">{{ __('messages.create_thread') }}</span></a>
                 </li>
-            </ul>
+            @endif
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"> {{ __('messages.language') }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{route('language', 'en')}}">{{ __('messages.english') }}</a>
+                    <a class="dropdown-item" href="{{route('language', 'de')}}">{{ __('messages.germany') }}</a>
+                </div>
+            </li>
+        </ul>
+        @if(\Auth::user())
             <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('search') }}">
                 {{ csrf_field() }}
                 <input class="form-control mr-sm-2" type="search" name="search" placeholder="{{ __('messages.search_threads') }}" aria-label="{{ __('messages.search_threads') }}">
@@ -37,28 +50,21 @@
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     @if(\Auth::user())
-                        {{Auth::user()->name}}
+                        @if (Gravatar::exists(Auth::user()->email))
+                            <img src="{{ Gravatar::get(Auth::user()->email, ['size'=>50]) }}">
+                        @endif
+                            {{Auth::user()->name}}
                     @else
                         {{ __('messages.login_register') }}
                     @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     @if(\Auth::user())
-                            <a class="dropdown-item" href="{{route('logout')}}">{{ __('messages.logout') }}</a>
-                        @else
-                            <a class="dropdown-item" href="{{route('register')}}">{{ __('messages.registration') }}</a>
-                            <a class="dropdown-item" href="{{route('login')}}">{{ __('messages.login') }}</a>
+                        <a class="dropdown-item" href="{{route('logout')}}">{{ __('messages.logout') }}</a>
+                    @else
+                        <a class="dropdown-item" href="{{route('register')}}">{{ __('messages.registration') }}</a>
+                        <a class="dropdown-item" href="{{route('login')}}">{{ __('messages.login') }}</a>
                     @endif
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false"> {{ __('messages.language') }}
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('language', 'en')}}">{{ __('messages.english') }}</a>
-                    <a class="dropdown-item" href="{{route('language', 'de')}}">{{ __('messages.germany') }}</a>
                 </div>
             </li>
         </ul>

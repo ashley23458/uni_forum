@@ -7,7 +7,12 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <img src="{{asset('images/avatar.png')}} " class="rounded-circle img-thumbnail" alt="avatar">
+                            @if (Gravatar::exists($thread->user->email))
+                                <img src="{{ Gravatar::get($thread->user->email, ['size'=>500]) }}" class="rounded-circle img-thumbnail" alt="avatar">
+                            @else
+                                <img src="{{asset('images/avatar.png')}} " class="rounded-circle img-thumbnail" alt="avatar">
+                            @endif
+
                         </li>
                         <li class="list-group-item">
                             <div class="font-weight-bold text-center">
