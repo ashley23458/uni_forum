@@ -53,4 +53,9 @@ return [
     'login' => 'Login',
     'login_google' => 'Anmeldung mit Google',
     'or' => 'ODER',
+    'message_created_thread' => 'Dies ist eine E-Mail, um zu bestätigen, dass Ihr Thread erfolgreich erstellt wurde. Bitte klicken Sie auf
+    Klicken Sie auf die Schaltfläche unten, um den neu hinzugefügten Thread anzuzeigen',
+    'hello' => 'Hallo',
+    'view_thread' => 'Thread anzeigen',
+    'thanks' => 'Vielen Dank',
 ];

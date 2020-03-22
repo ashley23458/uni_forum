@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreThreadPost;
 use App\Thread;
 use App\Forum;
+use Mail;
+use App\Mail\ThreadCreated;
 
 class ThreadController extends Controller
 {
@@ -22,7 +24,8 @@ class ThreadController extends Controller
 
     public function store(StoreThreadPost $request)
     {
-        $request->user()->threads()->create($request->validated());
+        $thread = $request->user()->threads()->create($request->validated());
+        Mail::to ($thread->user->email)->send(new ThreadCreated($thread));
         return redirect('/')->with('info', __('messages.thread_create_success'));
     }
 

@@ -53,4 +53,9 @@ return [
     'login' => 'Login',
     'login_google' => 'Sign in with Google',
     'or' => 'OR',
+    'message_created_thread' => 'This is an email to confirm that your thread has been created successfully. Please click the
+    button below to view the newly added thread',
+    'hello' => 'Hello',
+    'view_thread' => 'View thread',
+    'thanks' => 'Thanks',
 ];
