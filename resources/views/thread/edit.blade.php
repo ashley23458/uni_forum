@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('title', __('messages.edit_thread_title'))
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
+    @push('stylesheets')
+        @trixassets
+    @endpush
+
+        <div class="col-md-12">
             <h2>{{ __('messages.edit_thread_title') }}</h2>
             <div class="required-fields">
                 <p>{{ __('messages.mandatory_fields') }} (<span class="text-danger">*</span>).</p>
@@ -11,7 +14,7 @@
                 @method('PUT')
                 @csrf
                 <div class="form-group">
-                    <label for="forum">{{ __('messages.please_forum') }} <span class="text-danger">*</span></label>
+                    <label for="forum">{{ __('messages.select_forum') }} <span class="text-danger">*</span></label>
                     <select name="forum_id" class="form-control" id="forum">
                         <option>{{ __('messages.please_select') }}</option>
                         @foreach ($forums as $forum)
@@ -39,8 +42,9 @@
                 </div>
                 <div class="form-group">
                     <label for="body">{{ __('messages.message') }} <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="body" name="body" rows="6" placeholder="{{ __('messages.enter_message') }}">{{old('body', $thread->body)}}
-                    </textarea>
+                    {{-- <textarea name="body" id="body" cols="30" rows="10">{{ $thread->body }}</textarea> --}}
+                    @trix($thread, 'body')
+                    {{-- @trix($thread, 'body', [ 'hideTools' => ['text-tools'] ]) --}}
                     @if ($errors->has('body'))
                         <div class="alert alert-error alert-dismissable">
                             {{ $errors->first('body') }}
@@ -50,5 +54,4 @@
                 <button type="submit" class="btn btn-secondary">{{ __('messages.submit') }}</button>
             </form>
         </div>
-    </div>
 @endsection

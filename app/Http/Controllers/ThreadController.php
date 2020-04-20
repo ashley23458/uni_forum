@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreThreadPost;
+use Illuminate\Http\Request;
 use App\Thread;
 use App\Forum;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,6 @@ class ThreadController extends Controller
     public function store(StoreThreadPost $request)
     {
         $thread = Thread::create(['thread-trixFields' => request('thread-trixFields'),
-            'attachment-thread-trixFields' => request('attachment-thread-trixFields'),
             'title' => request('title'),
             'user_id' => Auth::user()->id,
             'forum_id' => request('forum_id')]);
@@ -49,7 +49,10 @@ class ThreadController extends Controller
 
     public function update(StoreThreadPost $request, Thread $thread)
     {
-        $thread->update(['forum_id' => $request->forum_id, 'title' => $request->title, 'body' => $request->body]);
+        $thread['thread-trixFields'] = request('thread-trixFields');
+        $thread->title = request('title');
+        $thread->forum_id = request('forum_id');
+        $thread->save();
         return redirect()->to('thread/'.$thread->id)->with('info', __('messages.thread_update_success'));
     }
 
