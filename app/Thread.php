@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 
 class Thread extends Model
 {
-    protected $fillable = [
-        'title', 'body', 'user_id', 'forum_id'
-    ];
+    use HasTrixRichText;
+
+    protected $guarded = [];
 
     protected $dates = [
         'created_at',
