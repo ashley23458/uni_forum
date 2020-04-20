@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('title',  __('messages.create_thread'))
 @section('content')
+@push('stylesheets')
+    @trixassets
+@endpush
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h2>{{ __('messages.create_thread') }}</h2>
             <div class="required-fields">
                 <p>{{ __('messages.mandatory_fields') }} (<span class="text-danger">*</span>)</p>
@@ -35,15 +38,12 @@
                         </div>
                     @endif
                 </div>
-                <div class="form-group">
-                    <label for="body">{{ __('messages.message') }} <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="body" name="body" placeholder="{{ __('messages.enter_message') }}" rows="6">{{old('body')}}</textarea>
-                    @if ($errors->has('body'))
-                        <div class="alert alert-error alert-dismissable">
-                            {{ $errors->first('body') }}
-                        </div>
-                    @endif
-                </div>
+                @trix(\App\Thread::class, 'body')
+                @if ($errors->has('thread-trixFields.*'))
+                    <div class="alert alert-error alert-dismissable">
+                        {{ $errors->first('thread-trixFields.*') }}
+                    </div>
+                @endif
                 <button type="submit" class="btn btn-secondary">{{ __('messages.submit') }}</button>
             </form>
         </div>

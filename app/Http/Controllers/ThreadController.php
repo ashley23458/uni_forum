@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreThreadPost;
 use App\Thread;
 use App\Forum;
+use Illuminate\Support\Facades\Auth;
 use Mail;
 use App\Mail\ThreadCreated;
 
@@ -24,7 +25,11 @@ class ThreadController extends Controller
 
     public function store(StoreThreadPost $request)
     {
-        $thread = $request->user()->threads()->create($request->validated());
+        $thread = Thread::create(['thread-trixFields' => request('thread-trixFields'),
+            'attachment-thread-trixFields' => request('attachment-thread-trixFields'),
+            'title' => request('title'),
+            'user_id' => Auth::user()->id,
+            'forum_id' => request('forum_id')]);
         Mail::to ($thread->user->email)->send(new ThreadCreated($thread));
         return redirect('/')->with('info', __('messages.thread_create_success'));
     }

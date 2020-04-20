@@ -15,7 +15,7 @@ class StoreThreadPost extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'body' => 'required|string|min:10',
+            'thread-trixFields.*' => 'required|min:10',
             'forum_id' => 'required|integer|exists:forums,id'
         ];
     }

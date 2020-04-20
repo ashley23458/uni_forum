@@ -105,3 +105,8 @@ a:hover {
 #chart-div {
     height: 375px;
 }
+
+/** trix **/
+trix-toolbar .trix-button-row {
+    flex-wrap: wrap;
+}
