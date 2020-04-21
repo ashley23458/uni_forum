@@ -42,12 +42,12 @@
                 </div>
                 <div class="form-group">
                     <label for="body">{{ __('messages.message') }} <span class="text-danger">*</span></label>
-                    {{-- <textarea name="body" id="body" cols="30" rows="10">{{ $thread->body }}</textarea> --}}
+                    {{-- <textarea name="body" id="body">{{old('thread-trixFields.*', $thread->body)}}</textarea> --}}
                     @trix($thread, 'body')
-                    {{-- @trix($thread, 'body', [ 'hideTools' => ['text-tools'] ]) --}}
-                    @if ($errors->has('body'))
+                    {{-- @trix($thread, 'body') --}}
+                    @if ($errors->has('thread-trixFields.*'))
                         <div class="alert alert-error alert-dismissable">
-                            {{ $errors->first('body') }}
+                            {{ $errors->first('thread-trixFields.*') }}
                         </div>
                     @endif
                 </div>
