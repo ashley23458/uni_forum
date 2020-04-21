@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', $thread->title)
 @section('content')
+    @push('stylesheets')
+        @trixassets
+    @endpush
     <div class="row">
         <div class="col-md-3">
             <div class="card bg-light">
@@ -44,10 +47,14 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header font-weight-bold">
-                    <h2 class="card-title">{{$thread->title}}</h2>
+                    <h2 class="card-title text-capitalize">{{$thread->title}}</h2>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{$thread->body}}</p>
+                    <div class="row">
+                        <div class="trix-content">
+                        {!! $thread->trixRichText()->where('field', 'body')->first()->content !!}
+                        </div>
+                    </div>
                     <p class="font-italic text-muted">{{ __('messages.last_updated') }} {{ $thread->updated_at->format('jS F Y h:i A') }}</p>
                 </div>
                 <div class="card-footer text-muted">
