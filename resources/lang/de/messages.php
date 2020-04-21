@@ -58,4 +58,5 @@ return [
     'hello' => 'Hallo',
     'view_thread' => 'Thread anzeigen',
     'thanks' => 'Vielen Dank',
+    'body_required' => 'Der Gewindekörper ist erforderlich',
 ];

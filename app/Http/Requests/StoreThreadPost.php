@@ -15,7 +15,7 @@ class StoreThreadPost extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'thread-trixFields.*' => 'required|min:10',
+            'thread-trixFields.*' => 'required',
             'forum_id' => 'required|integer|exists:forums,id'
         ];
     }
@@ -25,7 +25,7 @@ class StoreThreadPost extends FormRequest
         return [
             'forum_id.integer' => __('messages.forum_required'),
             'forum_id.required'  => __('messages.forum_required'),
-            'forum_id.exists'  =>  __('messages.forum_exists'),
+            'thread-trixFields.*.required'  =>  __('messages.body_required'),
         ];
     }
 }

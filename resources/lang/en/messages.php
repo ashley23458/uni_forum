@@ -58,4 +58,5 @@ return [
     'hello' => 'Hello',
     'view_thread' => 'View thread',
     'thanks' => 'Thanks',
+    'body_required' => 'The thread body is required',
 ];
