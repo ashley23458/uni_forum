@@ -49,6 +49,7 @@ class ThreadController extends Controller
 
     public function update(StoreThreadPost $request, Thread $thread)
     {
+        $this->authorize('access', $thread);
         $thread['thread-trixFields'] = request('thread-trixFields');
         $thread->title = request('title');
         $thread->forum_id = request('forum_id');
