@@ -25,6 +25,7 @@ class StoreThreadPost extends FormRequest
         return [
             'forum_id.integer' => __('messages.forum_required'),
             'forum_id.required'  => __('messages.forum_required'),
+            'forum_id.exists'  => __('messages.forum_required'),
             'thread-trixFields.*.required'  =>  __('messages.body_required'),
         ];
     }
