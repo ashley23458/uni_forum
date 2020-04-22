@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'University forum',
     'manifest' => [
         'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
-        'start_url' => '/',
+        'short_name' => 'UF',
+        'start_url' => env('APP_URL', '/'),
         'background_color' => '#ffffff',
-        'theme_color' => '#000000',
+        'theme_color' => '#0b3c52',
         'display' => 'standalone',
         'orientation'=> 'any',
         'icons' => [
