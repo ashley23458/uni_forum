@@ -8,9 +8,9 @@ Route::group(['middleware' => 'language'], function () {
     });
 
     Route::get('/local/{lang}', 'LocalisationController@setLanguage')->name('language');
-    Route::get('login/google', 'GoogleAuthController@findOrCreateUser');
-    Route::get('login/google/callback', 'GoogleAuthController@callback');
-    Route::get('login/google/auth', 'GoogleAuthController@auth')->name('google_login');
+    Route::get('login/{provider}', 'SocialiteController@findOrCreateUser');
+    Route::get('login/{provider}/callback', 'SocialiteController@callback');
+    Route::get('login/{provider}/auth', 'SocialiteController@auth')->name('social_login');
     Auth::routes(['verify' => true]);
     Route::get('/logout', 'Auth\LoginController@logout');
 });
