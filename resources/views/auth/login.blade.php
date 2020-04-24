@@ -48,8 +48,13 @@
                     <strong class="mx-auto">{{ __('messages.or') }}</strong>
                 </div>
                 <div class="row">
-                    <a href="{{ route('google_login') }}" class="col-md-12 btn btn-social btn-dark">
+                    <a href="{{ route('social_login', 'google') }}" class="col-md-12 btn btn-social btn-danger">
                         <span class="fab fa-google mr-2 pr-2 border-right"></span>{{ __('messages.login_google') }}
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="{{ route('social_login', 'github') }}" class="col-md-12 btn btn-social btn-dark">
+                        <span class="fab fa-github mr-2 pr-2 border-right"></span>{{ __('messages.login_github') }}
                     </a>
                 </div>
             </div>

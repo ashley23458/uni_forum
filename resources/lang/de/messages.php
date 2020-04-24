@@ -53,6 +53,7 @@ return [
     'login_message' => 'Melden Sie sich mit E-Mail-Adresse und Passwort an.',
     'login' => 'Login',
     'login_google' => 'Anmeldung mit Google',
+    'login_github' => 'Melden Sie sich bei Github an',
     'or' => 'ODER',
     'message_created_thread' => 'Dies ist eine E-Mail, um zu bestätigen, dass Ihr Thread erfolgreich erstellt wurde. Bitte klicken Sie auf
     Klicken Sie auf die Schaltfläche unten, um den neu hinzugefügten Thread anzuzeigen',

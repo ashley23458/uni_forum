@@ -53,6 +53,7 @@ return [
     'login_message' => 'Login with Email address and Password.',
     'login' => 'Login',
     'login_google' => 'Sign in with Google',
+    'login_github' => 'Sign in with Github',
     'or' => 'OR',
     'message_created_thread' => 'This is an email to confirm that your thread has been created successfully. Please click the
     button below to view the newly added thread',
