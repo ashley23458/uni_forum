@@ -11,6 +11,7 @@ return [
     'search' => 'Search',
     'login_register' => 'Register / login',
     'login' => 'Login',
+    'login_success' => 'You have been logged in!',
     'logout' => 'Logout',
     'language' => 'Language',
     'english' => 'English',

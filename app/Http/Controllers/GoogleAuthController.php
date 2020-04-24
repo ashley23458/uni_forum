@@ -9,6 +9,9 @@ use Socialite;
 use Laravel\Socialite\Contracts\User as SocialiteUser;
 use App\User;
 
+/**
+ * Jenkins, A. J. University of Huddersfield. (2020). Sample App Final. Retrieved from https://huddersfield.brightspace.com/d2l/le/content/65955/viewContent/518254/View.
+ */
 class GoogleAuthController extends Controller
 {
 	const REMEMBER_ME = true;
@@ -26,7 +29,7 @@ class GoogleAuthController extends Controller
 
         Auth::login($user, self::REMEMBER_ME);
 
-        return redirect(route('home'));
+        return redirect()->to('/')->with('info',  __('messages.login_success'));
     }
 
     private function findOrCreateUser(SocialiteUser $googleUser)

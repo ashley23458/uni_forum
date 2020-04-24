@@ -11,6 +11,7 @@ return [
     'search_threads' => 'Threads suchen',
     'login_register' => 'Registrieren / Login',
     'login' => 'Login',
+    'login_success' => 'Sie wurden eingeloggt!',
     'logout' => 'Ausloggen',
     'language' => 'Wähle eine Sprache',
     'english' => 'English',
