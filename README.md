@@ -7,12 +7,17 @@ University Forum Application
 5. Add google and Github credentials (created in Google and Github API) and add to .env.
    
    GOOGLE_CLIENT_ID=
+
    GOOGLE_CLIENT_SECRET=
+   
    GOOGLE_REDIRECT=${APP_URL}/login/google/callback
    
    GITHUB_CLIENT_ID=
+   
    GITHUB_CLIENT_SECRET=
+   
    GITHUB_CALLBACK_URL=${APP_URL}/login/github/callback
+   
 6. Add a mail service into .env.
 7. composer install
 8. php artisan key:generate
