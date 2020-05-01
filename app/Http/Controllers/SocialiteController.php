@@ -10,7 +10,12 @@ use Laravel\Socialite\Contracts\User as SocialiteUser;
 use App\User;
 
 /**
- * Jenkins, A. J. University of Huddersfield. (2020). Sample App Final. Retrieved from https://huddersfield.brightspace.com/d2l/le/content/65955/viewContent/518254/View.
+ * Author: Jenkins, A. J. University of Huddersfield.
+ * Data: 2020
+ * Title: Sample App Final
+ * Version: WEEK 18
+ * Type: Source code
+ * Availability: https://huddersfield.brightspace.com/d2l/le/content/65955/viewContent/518254/View.
  */
 class SocialiteController extends Controller
 {
